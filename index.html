@@ -3,62 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jharkhand University CGPA to Percentage Calculator (BBMKU, VBU, RU, KU)</title>
-<meta name="description" content="Convert CGPA to Percentage for Jharkhand Universities like BBMKU, VBU, Ranchi University, Kolhan University and more. Free online calculator.">
-<meta name="robots" content="index, follow">
+<title>CGPA to Percentage Calculator (India) 2026</title>
+<meta name="description" content="Convert CGPA to Percentage easily using Indian university formula. Free online CGPA to Percentage calculator for students.">
 
 <style>
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #eef2f3, #dfe9f3);
+  background: #f4f6f9;
   margin: 0;
   padding: 0;
-}
-
-header {
-  background: #004d40;
-  color: white;
-  padding: 15px;
   text-align: center;
-  font-size: 20px;
-  font-weight: bold;
 }
 
 .container {
-  max-width: 800px;
-  margin: 40px auto;
+  max-width: 700px;
+  margin: 50px auto;
   background: white;
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 h1 {
-  color: #004d40;
+  color: #1a237e;
 }
 
-select, input {
+input {
   padding: 10px;
-  width: 260px;
+  width: 200px;
   font-size: 16px;
   margin: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
 }
 
 button {
   padding: 10px 20px;
   font-size: 16px;
-  background: #004d40;
+  background: #1a237e;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background: #00695c;
+  background: #303f9f;
 }
 
 .result {
@@ -68,126 +56,75 @@ button:hover {
   color: green;
 }
 
-.formula {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #555;
-}
-
-.custom-box {
-  display: none;
-}
-
 .content {
   text-align: left;
   margin-top: 40px;
 }
 
-footer {
+.ad-space {
+  margin: 30px 0;
+  padding: 20px;
+  background: #eee;
   text-align: center;
-  padding: 15px;
-  background: #004d40;
-  color: white;
-  margin-top: 40px;
-  font-size: 14px;
 }
 </style>
 </head>
-
 <body>
-
-<header>
-Jharkhand University CGPA to Percentage Calculator
-</header>
 
 <div class="container">
 
-<h1>Convert CGPA to Percentage</h1>
-<p>Select your university and enter CGPA.</p>
+<h1>CGPA to Percentage Calculator</h1>
 
-<select id="university">
-  <option value="bbmku">BBMKU (CGPA × 9.5)</option>
-  <option value="vbu">Vinoba Bhave University (CGPA × 9.5)</option>
-  <option value="ranchi">Ranchi University (CGPA × 9.5)</option>
-  <option value="kolhan">Kolhan University (CGPA × 9.5)</option>
-  <option value="skmu">Sido Kanhu Murmu University (CGPA × 9.5)</option>
-  <option value="npu">Nilamber-Pitamber University (CGPA × 9.5)</option>
-  <option value="custom">Custom Multiplier</option>
-</select>
+<p>Use this free tool to convert CGPA to Percentage using the standard Indian university formula.</p>
 
+<input type="number" id="cgpa" placeholder="Enter CGPA" step="0.01" min="0" max="10">
 <br>
-
-<input type="number" id="cgpa" placeholder="Enter CGPA (0 - 10)" step="0.01" min="0" max="10">
-
-<div class="custom-box" id="customBox">
-  <input type="number" id="multiplier" placeholder="Enter Custom Multiplier" step="0.1">
-</div>
-
-<br>
-
 <button onclick="convert()">Convert</button>
 
 <div class="result" id="result"></div>
-<div class="formula" id="formula"></div>
+
+<div class="ad-space">
+<!-- Google AdSense Code Will Go Here After Approval -->
+Ad Space
+</div>
 
 <div class="content">
-<h2>How CGPA is Converted in Jharkhand Universities?</h2>
-<p>Most Jharkhand state universities including BBMKU, VBU, Ranchi University and others generally use:</p>
+<h2>How to Convert CGPA to Percentage?</h2>
+
+<p>Most Indian universities follow this standard formula:</p>
+
 <p><strong>Percentage = CGPA × 9.5</strong></p>
 
-<h2>Important Disclaimer</h2>
-<p>Always verify the official academic regulations of your university before using the percentage for job or higher education purposes.</p>
-</div>
+<p>For example, if your CGPA is 8.2:</p>
+<p>8.2 × 9.5 = 77.9%</p>
+
+<h2>Why Do Universities Use CGPA?</h2>
+<p>CGPA (Cumulative Grade Point Average) is used to standardize grading across semesters and subjects. It provides a uniform evaluation system for students.</p>
+
+<h2>Important Note</h2>
+<p>Some universities use different formulas. Always verify with your institution’s official guidelines.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<p><strong>Is CGPA multiplied by 9.5 everywhere?</strong><br>
+No. Some universities use different multipliers.</p>
+
+<p><strong>Can I use this calculator for job applications?</strong><br>
+Yes, if your university follows the 9.5 formula.</p>
 
 </div>
 
-<footer>
-© 2026 Jharkhand CGPA Calculator | Educational Tool
-</footer>
+</div>
 
 <script>
-const universitySelect = document.getElementById("university");
-const customBox = document.getElementById("customBox");
-
-universitySelect.addEventListener("change", function() {
-  if (this.value === "custom") {
-    customBox.style.display = "block";
-  } else {
-    customBox.style.display = "none";
-  }
-});
-
 function convert() {
-  const cgpa = parseFloat(document.getElementById("cgpa").value);
-  const university = universitySelect.value;
-  const resultDiv = document.getElementById("result");
-  const formulaDiv = document.getElementById("formula");
-
-  if (isNaN(cgpa) || cgpa < 0 || cgpa > 10) {
-    resultDiv.innerHTML = "Please enter a valid CGPA between 0 and 10.";
-    formulaDiv.innerHTML = "";
+  const cgpa = document.getElementById("cgpa").value;
+  if (cgpa === "" || cgpa < 0 || cgpa > 10) {
+    document.getElementById("result").innerHTML = "Please enter a valid CGPA between 0 and 10.";
     return;
   }
-
-  let percentage;
-  let formulaText;
-
-  if (university === "custom") {
-    const multiplier = parseFloat(document.getElementById("multiplier").value);
-    if (isNaN(multiplier)) {
-      resultDiv.innerHTML = "Please enter a valid custom multiplier.";
-      formulaDiv.innerHTML = "";
-      return;
-    }
-    percentage = cgpa * multiplier;
-    formulaText = "CGPA × " + multiplier;
-  } else {
-    percentage = cgpa * 9.5;
-    formulaText = "CGPA × 9.5";
-  }
-
-  resultDiv.innerHTML = "Your Percentage is: " + percentage.toFixed(2) + "%";
-  formulaDiv.innerHTML = "Formula Used: " + formulaText;
+  const percentage = (cgpa * 9.5).toFixed(2);
+  document.getElementById("result").innerHTML = "Your Percentage is: " + percentage + "%";
 }
 </script>
 
