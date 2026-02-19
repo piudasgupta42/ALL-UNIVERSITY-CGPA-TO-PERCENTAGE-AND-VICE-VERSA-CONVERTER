@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CGPA to Percentage Calculator India 2026</title>
-<meta name="description" content="Free CGPA to Percentage Calculator for Indian Universities. Select your university and convert instantly.">
+<title>Jharkhand University CGPA to Percentage Calculator (BBMKU, VBU, RU, KU)</title>
+<meta name="description" content="Convert CGPA to Percentage for Jharkhand Universities like BBMKU, VBU, Ranchi University, Kolhan University and more. Free online calculator.">
+<meta name="robots" content="index, follow">
 
 <style>
 body {
@@ -15,16 +16,16 @@ body {
 }
 
 header {
-  background: #1a237e;
+  background: #004d40;
   color: white;
   padding: 15px;
   text-align: center;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .container {
-  max-width: 750px;
+  max-width: 800px;
   margin: 40px auto;
   background: white;
   padding: 30px;
@@ -34,17 +35,12 @@ header {
 }
 
 h1 {
-  color: #1a237e;
-  margin-bottom: 10px;
-}
-
-p {
-  color: #555;
+  color: #004d40;
 }
 
 select, input {
   padding: 10px;
-  width: 250px;
+  width: 260px;
   font-size: 16px;
   margin: 10px;
   border-radius: 6px;
@@ -54,7 +50,7 @@ select, input {
 button {
   padding: 10px 20px;
   font-size: 16px;
-  background: #1a237e;
+  background: #004d40;
   color: white;
   border: none;
   border-radius: 6px;
@@ -62,7 +58,7 @@ button {
 }
 
 button:hover {
-  background: #303f9f;
+  background: #00695c;
 }
 
 .result {
@@ -90,38 +86,32 @@ button:hover {
 footer {
   text-align: center;
   padding: 15px;
-  background: #1a237e;
+  background: #004d40;
   color: white;
   margin-top: 40px;
   font-size: 14px;
 }
-
-.ad-space {
-  margin: 30px 0;
-  padding: 20px;
-  background: #f1f1f1;
-  text-align: center;
-  border-radius: 8px;
-}
 </style>
 </head>
+
 <body>
 
 <header>
-CGPA to Percentage Calculator (India)
+Jharkhand University CGPA to Percentage Calculator
 </header>
 
 <div class="container">
 
 <h1>Convert CGPA to Percentage</h1>
-<p>Select your university and enter your CGPA below.</p>
+<p>Select your university and enter CGPA.</p>
 
 <select id="university">
-  <option value="cbse">CBSE (CGPA × 9.5)</option>
-  <option value="vtu">VTU (CGPA × 10)</option>
-  <option value="anna">Anna University (CGPA × 10)</option>
-  <option value="mumbai">Mumbai University (CGPA × 7.1 + 11)</option>
-  <option value="du">Delhi University (CGPA × 9.5)</option>
+  <option value="bbmku">BBMKU (CGPA × 9.5)</option>
+  <option value="vbu">Vinoba Bhave University (CGPA × 9.5)</option>
+  <option value="ranchi">Ranchi University (CGPA × 9.5)</option>
+  <option value="kolhan">Kolhan University (CGPA × 9.5)</option>
+  <option value="skmu">Sido Kanhu Murmu University (CGPA × 9.5)</option>
+  <option value="npu">Nilamber-Pitamber University (CGPA × 9.5)</option>
   <option value="custom">Custom Multiplier</option>
 </select>
 
@@ -140,24 +130,19 @@ CGPA to Percentage Calculator (India)
 <div class="result" id="result"></div>
 <div class="formula" id="formula"></div>
 
-<div class="ad-space">
-Ad Space (Google AdSense after approval)
-</div>
-
 <div class="content">
-<h2>How CGPA to Percentage is Calculated?</h2>
-<p>Different Indian universities follow different conversion formulas. Most common formula is:</p>
+<h2>How CGPA is Converted in Jharkhand Universities?</h2>
+<p>Most Jharkhand state universities including BBMKU, VBU, Ranchi University and others generally use:</p>
 <p><strong>Percentage = CGPA × 9.5</strong></p>
-<p>However, some universities apply different multipliers or additional constants.</p>
 
-<h2>Important Note</h2>
-<p>Always verify the official conversion method from your university before submitting documents for jobs or higher studies.</p>
+<h2>Important Disclaimer</h2>
+<p>Always verify the official academic regulations of your university before using the percentage for job or higher education purposes.</p>
 </div>
 
 </div>
 
 <footer>
-© 2026 CGPA Calculator India | Educational Tool for Students
+© 2026 Jharkhand CGPA Calculator | Educational Tool
 </footer>
 
 <script>
@@ -185,44 +170,20 @@ function convert() {
   }
 
   let percentage;
-  let formulaText = "";
+  let formulaText;
 
-  switch (university) {
-    case "cbse":
-      percentage = cgpa * 9.5;
-      formulaText = "CGPA × 9.5";
-      break;
-
-    case "vtu":
-      percentage = cgpa * 10;
-      formulaText = "CGPA × 10";
-      break;
-
-    case "anna":
-      percentage = cgpa * 10;
-      formulaText = "CGPA × 10";
-      break;
-
-    case "mumbai":
-      percentage = (cgpa * 7.1) + 11;
-      formulaText = "CGPA × 7.1 + 11";
-      break;
-
-    case "du":
-      percentage = cgpa * 9.5;
-      formulaText = "CGPA × 9.5";
-      break;
-
-    case "custom":
-      const multiplier = parseFloat(document.getElementById("multiplier").value);
-      if (isNaN(multiplier)) {
-        resultDiv.innerHTML = "Please enter a valid custom multiplier.";
-        formulaDiv.innerHTML = "";
-        return;
-      }
-      percentage = cgpa * multiplier;
-      formulaText = "CGPA × " + multiplier;
-      break;
+  if (university === "custom") {
+    const multiplier = parseFloat(document.getElementById("multiplier").value);
+    if (isNaN(multiplier)) {
+      resultDiv.innerHTML = "Please enter a valid custom multiplier.";
+      formulaDiv.innerHTML = "";
+      return;
+    }
+    percentage = cgpa * multiplier;
+    formulaText = "CGPA × " + multiplier;
+  } else {
+    percentage = cgpa * 9.5;
+    formulaText = "CGPA × 9.5";
   }
 
   resultDiv.innerHTML = "Your Percentage is: " + percentage.toFixed(2) + "%";
