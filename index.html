@@ -3,36 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CGPA to Percentage Calculator (India) 2026</title>
-<meta name="description" content="Convert CGPA to Percentage easily using Indian university formula. Free online CGPA to Percentage calculator for students.">
+<title>CGPA to Percentage Calculator India 2026</title>
+<meta name="description" content="Free CGPA to Percentage Calculator for Indian Universities. Select your university and convert instantly.">
 
 <style>
 body {
   font-family: Arial, sans-serif;
-  background: #f4f6f9;
+  background: linear-gradient(to right, #eef2f3, #dfe9f3);
   margin: 0;
   padding: 0;
+}
+
+header {
+  background: #1a237e;
+  color: white;
+  padding: 15px;
   text-align: center;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .container {
-  max-width: 700px;
-  margin: 50px auto;
+  max-width: 750px;
+  margin: 40px auto;
   background: white;
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 h1 {
   color: #1a237e;
+  margin-bottom: 10px;
 }
 
-input {
+p {
+  color: #555;
+}
+
+select, input {
   padding: 10px;
-  width: 200px;
+  width: 250px;
   font-size: 16px;
   margin: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 button {
@@ -41,7 +57,7 @@ button {
   background: #1a237e;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
@@ -56,77 +72,168 @@ button:hover {
   color: green;
 }
 
+.formula {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.custom-box {
+  display: none;
+}
+
 .content {
   text-align: left;
   margin-top: 40px;
 }
 
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #1a237e;
+  color: white;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
 .ad-space {
   margin: 30px 0;
   padding: 20px;
-  background: #eee;
+  background: #f1f1f1;
   text-align: center;
+  border-radius: 8px;
 }
 </style>
 </head>
 <body>
 
+<header>
+CGPA to Percentage Calculator (India)
+</header>
+
 <div class="container">
 
-<h1>CGPA to Percentage Calculator</h1>
+<h1>Convert CGPA to Percentage</h1>
+<p>Select your university and enter your CGPA below.</p>
 
-<p>Use this free tool to convert CGPA to Percentage using the standard Indian university formula.</p>
+<select id="university">
+  <option value="cbse">CBSE (CGPA × 9.5)</option>
+  <option value="vtu">VTU (CGPA × 10)</option>
+  <option value="anna">Anna University (CGPA × 10)</option>
+  <option value="mumbai">Mumbai University (CGPA × 7.1 + 11)</option>
+  <option value="du">Delhi University (CGPA × 9.5)</option>
+  <option value="custom">Custom Multiplier</option>
+</select>
 
-<input type="number" id="cgpa" placeholder="Enter CGPA" step="0.01" min="0" max="10">
 <br>
+
+<input type="number" id="cgpa" placeholder="Enter CGPA (0 - 10)" step="0.01" min="0" max="10">
+
+<div class="custom-box" id="customBox">
+  <input type="number" id="multiplier" placeholder="Enter Custom Multiplier" step="0.1">
+</div>
+
+<br>
+
 <button onclick="convert()">Convert</button>
 
 <div class="result" id="result"></div>
+<div class="formula" id="formula"></div>
 
 <div class="ad-space">
-<!-- Google AdSense Code Will Go Here After Approval -->
-Ad Space
+Ad Space (Google AdSense after approval)
 </div>
 
 <div class="content">
-<h2>How to Convert CGPA to Percentage?</h2>
-
-<p>Most Indian universities follow this standard formula:</p>
-
+<h2>How CGPA to Percentage is Calculated?</h2>
+<p>Different Indian universities follow different conversion formulas. Most common formula is:</p>
 <p><strong>Percentage = CGPA × 9.5</strong></p>
-
-<p>For example, if your CGPA is 8.2:</p>
-<p>8.2 × 9.5 = 77.9%</p>
-
-<h2>Why Do Universities Use CGPA?</h2>
-<p>CGPA (Cumulative Grade Point Average) is used to standardize grading across semesters and subjects. It provides a uniform evaluation system for students.</p>
+<p>However, some universities apply different multipliers or additional constants.</p>
 
 <h2>Important Note</h2>
-<p>Some universities use different formulas. Always verify with your institution’s official guidelines.</p>
-
-<h2>Frequently Asked Questions</h2>
-
-<p><strong>Is CGPA multiplied by 9.5 everywhere?</strong><br>
-No. Some universities use different multipliers.</p>
-
-<p><strong>Can I use this calculator for job applications?</strong><br>
-Yes, if your university follows the 9.5 formula.</p>
-
+<p>Always verify the official conversion method from your university before submitting documents for jobs or higher studies.</p>
 </div>
 
 </div>
+
+<footer>
+© 2026 CGPA Calculator India | Educational Tool for Students
+</footer>
 
 <script>
+const universitySelect = document.getElementById("university");
+const customBox = document.getElementById("customBox");
+
+universitySelect.addEventListener("change", function() {
+  if (this.value === "custom") {
+    customBox.style.display = "block";
+  } else {
+    customBox.style.display = "none";
+  }
+});
+
 function convert() {
-  const cgpa = document.getElementById("cgpa").value;
-  if (cgpa === "" || cgpa < 0 || cgpa > 10) {
-    document.getElementById("result").innerHTML = "Please enter a valid CGPA between 0 and 10.";
+  const cgpa = parseFloat(document.getElementById("cgpa").value);
+  const university = universitySelect.value;
+  const resultDiv = document.getElementById("result");
+  const formulaDiv = document.getElementById("formula");
+
+  if (isNaN(cgpa) || cgpa < 0 || cgpa > 10) {
+    resultDiv.innerHTML = "Please enter a valid CGPA between 0 and 10.";
+    formulaDiv.innerHTML = "";
     return;
   }
-  const percentage = (cgpa * 9.5).toFixed(2);
-  document.getElementById("result").innerHTML = "Your Percentage is: " + percentage + "%";
+
+  let percentage;
+  let formulaText = "";
+
+  switch (university) {
+    case "cbse":
+      percentage = cgpa * 9.5;
+      formulaText = "CGPA × 9.5";
+      break;
+
+    case "vtu":
+      percentage = cgpa * 10;
+      formulaText = "CGPA × 10";
+      break;
+
+    case "anna":
+      percentage = cgpa * 10;
+      formulaText = "CGPA × 10";
+      break;
+
+    case "mumbai":
+      percentage = (cgpa * 7.1) + 11;
+      formulaText = "CGPA × 7.1 + 11";
+      break;
+
+    case "du":
+      percentage = cgpa * 9.5;
+      formulaText = "CGPA × 9.5";
+      break;
+
+    case "custom":
+      const multiplier = parseFloat(document.getElementById("multiplier").value);
+      if (isNaN(multiplier)) {
+        resultDiv.innerHTML = "Please enter a valid custom multiplier.";
+        formulaDiv.innerHTML = "";
+        return;
+      }
+      percentage = cgpa * multiplier;
+      formulaText = "CGPA × " + multiplier;
+      break;
+  }
+
+  resultDiv.innerHTML = "Your Percentage is: " + percentage.toFixed(2) + "%";
+  formulaDiv.innerHTML = "Formula Used: " + formulaText;
 }
 </script>
 
 </body>
 </html>
+ 
+
+
+
+
