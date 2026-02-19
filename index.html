@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CGPA to Percentage Calculator (India) 2026</title>
+<meta name="description" content="Convert CGPA to Percentage easily using Indian university formula. Free online CGPA to Percentage calculator for students.">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 700px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #1a237e;
+}
+
+input {
+  padding: 10px;
+  width: 200px;
+  font-size: 16px;
+  margin: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #1a237e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #303f9f;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: green;
+}
+
+.content {
+  text-align: left;
+  margin-top: 40px;
+}
+
+.ad-space {
+  margin: 30px 0;
+  padding: 20px;
+  background: #eee;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>CGPA to Percentage Calculator</h1>
+
+<p>Use this free tool to convert CGPA to Percentage using the standard Indian university formula.</p>
+
+<input type="number" id="cgpa" placeholder="Enter CGPA" step="0.01" min="0" max="10">
+<br>
+<button onclick="convert()">Convert</button>
+
+<div class="result" id="result"></div>
+
+<div class="ad-space">
+<!-- Google AdSense Code Will Go Here After Approval -->
+Ad Space
+</div>
+
+<div class="content">
+<h2>How to Convert CGPA to Percentage?</h2>
+
+<p>Most Indian universities follow this standard formula:</p>
+
+<p><strong>Percentage = CGPA × 9.5</strong></p>
+
+<p>For example, if your CGPA is 8.2:</p>
+<p>8.2 × 9.5 = 77.9%</p>
+
+<h2>Why Do Universities Use CGPA?</h2>
+<p>CGPA (Cumulative Grade Point Average) is used to standardize grading across semesters and subjects. It provides a uniform evaluation system for students.</p>
+
+<h2>Important Note</h2>
+<p>Some universities use different formulas. Always verify with your institution’s official guidelines.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<p><strong>Is CGPA multiplied by 9.5 everywhere?</strong><br>
+No. Some universities use different multipliers.</p>
+
+<p><strong>Can I use this calculator for job applications?</strong><br>
+Yes, if your university follows the 9.5 formula.</p>
+
+</div>
+
+</div>
+
+<script>
+function convert() {
+  const cgpa = document.getElementById("cgpa").value;
+  if (cgpa === "" || cgpa < 0 || cgpa > 10) {
+    document.getElementById("result").innerHTML = "Please enter a valid CGPA between 0 and 10.";
+    return;
+  }
+  const percentage = (cgpa * 9.5).toFixed(2);
+  document.getElementById("result").innerHTML = "Your Percentage is: " + percentage + "%";
+}
+</script>
+
+</body>
+</html>
